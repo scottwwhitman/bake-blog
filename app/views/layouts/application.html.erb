@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BakeBlog</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if session[:user_id] %>
+      <p>You're logged in!</p>
+    <% else %>
+      <p>Go log in!</p>
+
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
